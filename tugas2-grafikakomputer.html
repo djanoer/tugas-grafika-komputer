@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tugas 2 - Grafika Komputer</title>
+    <style>
+      canvas {
+        border: 2px solid black;
+      }
+    </style>
+    <script src="lib/grafika_lib.js"></script>
+</head>
+
+<body>
+  <canvas id="canvas1" width="500" height="500"></canvas>
+  <script>
+    var myCanvas;
+    myCanvas = document.querySelector("#canvas1");
+    var ctx = myCanvas.getContext("2d");
+    var imageDataSaya = ctx.getImageData(0, 0, myCanvas.width, myCanvas.height);
+
+    //DRAW HERE
+    for (var i=0; i<100; i++) {
+      gbr_titik(imageDataSaya, 100+i, 100, 255, 0, 0);
+    }
+
+    for (var i=0; i<100; i++) {
+      gbr_titik(imageDataSaya, 200, 100+i, 255, 0, 0);
+    }
+
+    dda_line(imageDataSaya, 0, 0, 100, 100, 0, 255, 0);
+    dda_line(imageDataSaya, 0, 200, 100, 100, 0, 255, 0);
+
+    ctx.putImageData(imageDataSaya, 0, 0);
+
+  </script>
+</body>
+</html>
