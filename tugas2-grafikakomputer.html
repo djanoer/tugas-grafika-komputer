@@ -21,16 +21,9 @@
     var imageDataSaya = ctx.getImageData(0, 0, myCanvas.width, myCanvas.height);
 
     //DRAW HERE
-    for (var i=0; i<100; i++) {
-      gbr_titik(imageDataSaya, 100+i, 100, 255, 0, 0);
-    }
-
-    for (var i=0; i<100; i++) {
-      gbr_titik(imageDataSaya, 200, 100+i, 255, 0, 0);
-    }
-
-    dda_line(imageDataSaya, 0, 0, 100, 100, 0, 255, 0);
-    dda_line(imageDataSaya, 0, 200, 100, 100, 0, 255, 0);
+    dda_line(imageDataSaya, 100, 100, 200, 200, 0, 255, 0);
+    dda_line(imageDataSaya, 100, 100, 0, 200, 0, 255, 0);
+    dda_line(imageDataSaya, 0, 200, 200, 200, 0, 255, 0);
 
     ctx.putImageData(imageDataSaya, 0, 0);
 
